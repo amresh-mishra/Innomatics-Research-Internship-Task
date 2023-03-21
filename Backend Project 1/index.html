@@ -1,0 +1,82 @@
+<!-- Amresh mishra : Innomatics research project -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regular Expression Tester</title>
+  <style>
+    body {
+        background-color: #dd7070; /* Set background color */
+			color: #0e0806; /* Set text color */
+			font-family: Arial, sans-serif; /* Set font family */
+			font-size: 16px; /* Set font size */
+			line-height: 2; /* Set line height */
+			margin: 10; /* Remove default margin */
+			padding: 0; /* Remove default padding */
+    }
+   </style>
+  <script>
+    function testRegex() {
+      // Get input string and regular expression pattern from the form
+      var inputString = document.getElementById("input-string").value;
+      var regexPattern = document.getElementById("regex-pattern").value;
+
+      // Use regular expression to find all matches in input string
+      var regex = new RegExp(regexPattern, "g");
+      var matches = inputString.match(regex);
+
+      // Display matches and count in the form
+      var count = matches ? matches.length : 0;
+      
+      document.getElementById("match-count").innerHTML = count;
+      
+    }
+  </script>
+</head>
+<body>
+<style>
+    button{
+    width: 150px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+div {
+  border-radius: 4px;
+  background-color: #e5ddfe;
+  padding: 20px;
+}
+input {
+  width: 100%;
+  height: 30px; 
+}
+h1{
+     
+    background: #a80d0d;
+    text-align: center;
+}
+        </style>          
+
+  <h1>Regular Expression Tester</h1>
+  <div> 
+  <form>
+    <label for="input-string"><b>Input String:</b></label>
+    <input type="text" id="input-string" name="input-string" placeholder="Enter the text..."><br>
+    <label for="regex-pattern"><b>Regular Expression:</b></label>
+    <input type="text" id="regex-pattern" name="regex-pattern" placeholder="Enter your Regular exp"><br>
+    <button type="button" onclick="testRegex()"><b>SUBMIT</b></button><br>
+  </form>
+  
+    <p><b>Match count:</b> <span id="match-count">0</span></p>
+    <div id="matches"></div>
+  </div>
+</body>
+</html>
