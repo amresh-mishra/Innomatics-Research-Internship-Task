@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLLECT YOUR NOTES</title>
+    <style>
+        body {
+            background-color: #100e0e; /* Set background color */
+                color: #cdc9c8; /* Set text color */
+                font-family: Arial, sans-serif; /* Set font family */
+                font-size: 16px; /* Set font size */
+                line-height: 2; /* Set line height */
+                margin: 10; /* Remove default margin */
+                padding: 0; /* Remove default padding */
+        }
+        button{
+    width: 150px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: #2f2f2f;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+input {
+  width: 100%;
+  height: 30px; 
+  border-style: solid;
+  border: 2px solid red;
+  box-shadow: 0 60px 50px -5px rgba(191, 23, 23, 0.4);
+}
+h1 {
+  color: rgb(206, 238, 206);
+}
+       </style>
+</head>
+<center><h1 ><b>Note Taking App</b></h3></center>
+<center>
+
+    <body>
+        <div>
+            <form action="/" method="POST">
+                <input type="text" name="note" placeholder="Enter a note">
+                <button>Add Note</button>
+            </form>
+        </div>
+        <br>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"><b>Sno. |</b></th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for note in notes %}
+                    <tr>
+                        <th scope="row">{{loop.index}}</th>
+                        <td>{{ note }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</center>
+</html>
