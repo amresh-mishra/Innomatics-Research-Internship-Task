@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>URL History</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Long URL</th>
+        <th>Short URL</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      {% for url in urls %}
+      <tr>
+        <td style="border: 2px solid black;"><a href="{{url.long}}">{{url.long}}</a></td>
+        <td style="border: 2px solid black;"><a href="http://127.0.0.1:5000/{{url.short}}">http://127.0.0.1:5000/{{url.short}}</a></td>
+        <td style="border: 2px solid black;"><a href="/delete/{{url.id}}" style="display: block;color: #f31111;text-decoration: none;padding: 10px;">DELETE</a></td>
+    </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
